@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { Form, Input } from 'antd'
 
-function VideoURL_Input ( { setEmbedLink, embedLink } ) {
+function VideoURL_Input ( { setEmbedLink, embedLink, goodEmbedLink, setGoodEmbedLink } ) {
 
   const checkEmbedLink = embedLink => {
 
-    const regex = /<iframe.*?<\/iframe>/s;
+    const regex = /<iframe.*?<\/iframe>/;
 
     if (embedLink.search(regex) === -1) {
+      setGoodEmbedLink(false);
       return null;
     }
     return embedLink;

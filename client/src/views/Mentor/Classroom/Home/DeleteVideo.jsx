@@ -5,7 +5,6 @@ import { deleteVideoLink, getVideoLink } from "../../../../Utils/requests";
 
 function DeleteVideoButton ({ embedLink, setEmbedLink}) {
     async function DeleteVideoQuery() {
-
         const response = await getVideoLink(embedLink)
         if (response.data[0]) {
             deleteVideoLink(response.data[0].id)
@@ -19,8 +18,6 @@ function DeleteVideoButton ({ embedLink, setEmbedLink}) {
         }
     }
 
-    
-    
     if (embedLink) {
         return (
             <Popconfirm

@@ -683,7 +683,7 @@ export const getClassroomWorkspace = async (id) =>
 export const getVideoLink = async (id) =>
   makeRequest({
     method: GET,
-    path: `${server}/url-storages?_q=${id}`,
+    path: `${server}/url-storages?URL=${id}`,
     auth: true,
     error: 'Unable to retrieve video link'
   });

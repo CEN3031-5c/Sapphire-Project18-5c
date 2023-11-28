@@ -37,6 +37,7 @@ export default function DisplayCodeModal(props) {
         e.preventDefault();
         // do something with the form data
         const { title, url, description } = formData;
+        //console.log(title);
         uploadVideo(title, url, description);
         setFormData({
             title: "",

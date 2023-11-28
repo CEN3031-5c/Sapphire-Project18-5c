@@ -674,14 +674,15 @@ export const getClassroomWorkspace = async (id) =>
   });
 
 //NEW VIDEO CREATOR!!!
-  export const uploadVideo = async (title, url, description,) =>
+  export const uploadVideo = async (title, url, description) =>
   makeRequest({
     method: POST,
+    //change path here!
     path: `${server}/video-creations`,
     data: {
-      title : title, 
-      url : url, 
-      description : description,
+      Title : title, 
+      VideoURL : url, 
+      Description : description,
       
     },
     auth: true,

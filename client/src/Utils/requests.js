@@ -679,3 +679,33 @@ export const getClassroomWorkspace = async (id) =>
     auth: true,
     error: 'Unable to retrive classroom workspaces',
   });
+
+export const getVideoLink = async (id) =>
+  makeRequest({
+    method: GET,
+    path: `${server}/url-storages/${id}`,
+    auth: true,
+    error: 'Unable to retrive video link',
+  });
+
+
+export const createVideoLink = async (name, link) =>
+  makeRequest({
+    method: POST,
+    path: `${server}/url-storages`,
+    auth: true,
+    data: {
+      name,
+      link,
+    },
+    error: 'Unable to create video link',
+  });
+
+export const deleteVideoLink = async (id) =>
+  makeRequest({
+    method: DELETE,
+    path: `${server}/url-storages/${id}`,
+    auth: true,
+    error: 'Unable to delete video link',
+  });
+  

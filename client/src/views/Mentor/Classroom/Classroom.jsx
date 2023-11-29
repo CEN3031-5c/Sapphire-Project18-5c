@@ -6,6 +6,7 @@ import NavBar from '../../../components/NavBar/NavBar';
 import Roster from './Roster/Roster';
 import Home from './Home/Home';
 import Gallery from './Gallery/Gallery';
+import Lessons from './Lessons/Lessons';
 import SavedWorkSpaceTab from '../../../components/Tabs/SavedWorkspaceTab';
 import { useSearchParams, useParams } from 'react-router-dom';
 
@@ -54,6 +55,16 @@ export default function Classroom({
         </TabPane>
         <TabPane tab='Gallery' key='gallery'>
         <Gallery
+            classroomId={parseInt(id)}
+            selectedActivity={selectedActivity}
+            setSelectedActivity={setSelectedActivity}
+            viewing={viewing}
+          />
+          
+        </TabPane>
+
+        <TabPane tab='Lessons' key='lesson'>
+        <Lessons
             classroomId={parseInt(id)}
             selectedActivity={selectedActivity}
             setSelectedActivity={setSelectedActivity}

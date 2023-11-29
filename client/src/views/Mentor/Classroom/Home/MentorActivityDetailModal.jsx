@@ -7,11 +7,15 @@ import {
   getActivityToolboxAll,
   getLessonModuleActivities,
   updateActivityDetails,
+  inputVideoEntry,
 } from "../../../../Utils/requests"
 import "../../../ContentCreator/ActivityEditor/ActivityEditor.less"
 import ActivityComponentTags from "../../../ContentCreator/ActivityEditor/components/ActivityComponentTags"
 
 import VideoURL_Input from './VideoURL_Input'
+import DeleteVideoButton from './DeleteVideo'
+
+
 
 const SCIENCE = 1
 const MAKING = 2
@@ -91,6 +95,24 @@ const MentorActivityDetailModal = ({
     }
     return n
   }
+  
+  const handleSubmit = async (newLink, activityName) => {
+    const videoURL = newLink;
+    
+    if (videoURL) {
+      const nameActivity = activityName;
+      const response = await inputVideoEntry(videoURL, nameActivity);
+      if (response.err) {
+        console.error(response.err);
+      } else {
+        console.log('Video entry created successfully');
+        // Handle successful creation
+      }
+    } else {
+      console.error('Invalid embed link');
+      // Handle invalid embed link
+    }
+  };
 
   const handleViewActivityLevelTemplate = async activity => {
     const allToolBoxRes = await getActivityToolboxAll()
@@ -122,13 +144,18 @@ const MentorActivityDetailModal = ({
       }
     }
     if (embedLink) {
-      if (!goodEmbedLink) {
-        message.error("Please Enter a valid embed link starting with <iframe> and ending with </iframe>", 4);
-        return;
+      const good_Link = checkURL(embedLink)
+      if (!good_Link) {
+        setLinkError(true)
+        message.error("Please Enter a valid URL starting with HTTP/HTTPS", 4)
+        return
       }
     }
+    const newLink = checkURL(embedLink);
     setLinkError(false)
-    setGoodEmbedLink(true);
+    const activityName = `${learningStandard.name} - Activity ${selectActivity.number}`;
+    handleSubmit(newLink, activityName);
+
     const res = await updateActivityDetails(
       selectActivity.id,
       description,
@@ -141,6 +168,7 @@ const MentorActivityDetailModal = ({
       computationComponents,
       embedLink
     )
+
     if (res.err) {
       message.error(res.err)
     } else {
@@ -169,8 +197,7 @@ const MentorActivityDetailModal = ({
     <div id="mentoredit">
     <Button id="view-activity-button"
     onClick={showModal} style={{width: '40px',marginRight: "auto"}} >
-<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"
->
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
 <g
             id="link"
             stroke="none"
@@ -224,6 +251,7 @@ const MentorActivityDetailModal = ({
             placeholder="Enter image URL"
           ></Input.TextArea>
         </Form.Item>
+
         <VideoURL_Input
           setEmbedLink={setEmbedLink}
           embedLink={embedLink}
@@ -231,6 +259,12 @@ const MentorActivityDetailModal = ({
           goodEmbedLink={goodEmbedLink}
         >
         </VideoURL_Input>
+
+        <DeleteVideoButton
+          setEmbedLink={setEmbedLink}
+          embedLink={embedLink}
+        />
+
         {/* <Form.Item id="form-label" label="Student Template">
           <Input.TextArea
             onChange={e => setTemplate(e.target.value)}
@@ -300,14 +334,6 @@ const MentorActivityDetailModal = ({
             <br />
             
           </button>
-          <Popconfirm
-            title={`Are you sure you want to remove (TITLE) from this activity?`}
-            onConfirm={() => {}}
-          >
-            <button id="delete--video" onClick={() => {}}>
-              Delete Video
-            </button>
-          </Popconfirm>
 
         </Form.Item>
         <Form.Item

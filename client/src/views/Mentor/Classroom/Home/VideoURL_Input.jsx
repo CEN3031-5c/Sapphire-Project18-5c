@@ -11,8 +11,23 @@ function VideoURL_Input ( { setEmbedLink, embedLink, goodEmbedLink, setGoodEmbed
       setGoodEmbedLink(false);
       return null;
     }
+    else {
+      let position = embedLink.search("src=\"")
+      let cutLink = embedLink.substring(position + 5);
+      let newLink = cutLink.substring(0, cutLink.indexOf('\"'))
+
+      setEmbedLink(newLink)
+    }
     return embedLink;
   }
+
+
+  // const extractURLFromEmbedLink = embedLink => {
+  //   const regex = /<iframe.*?src="(.*?)".*?<\/iframe>/s;
+  //   const match = embedLink.match(regex);
+  //   return match ? match[1] : null;
+  // };
+
 
   return (
     <div>

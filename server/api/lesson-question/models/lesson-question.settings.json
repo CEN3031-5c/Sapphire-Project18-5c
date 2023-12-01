@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lesson_questions",
+  "info": {
+    "name": "LessonQuestion"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "lessonName": {
+      "type": "string"
+    },
+    "studentResponse": {
+      "type": "text"
+    }
+  }
+}

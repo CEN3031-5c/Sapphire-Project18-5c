@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/url-storages": {
+    "/lesson-questions": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Url-storage"
+          "Lesson-question"
         ],
         "parameters": [
           {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Url-storage"
+          "Lesson-question"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +252,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUrl-storage"
+                "$ref": "#/components/schemas/NewLesson-question"
               }
             }
           }
         }
       }
     },
-    "/url-storages/count": {
+    "/lesson-questions/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -311,12 +311,12 @@
         },
         "summary": "",
         "tags": [
-          "Url-storage"
+          "Lesson-question"
         ],
         "parameters": []
       }
     },
-    "/url-storages/{id}": {
+    "/lesson-questions/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -368,7 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "Url-storage"
+          "Lesson-question"
         ],
         "parameters": [
           {
@@ -434,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Url-storage"
+          "Lesson-question"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUrl-storage"
+                "$ref": "#/components/schemas/NewLesson-question"
               }
             }
           }
@@ -508,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Url-storage"
+          "Lesson-question"
         ],
         "parameters": [
           {
@@ -527,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Url-storage": {
+      "Lesson-question": {
         "required": [
           "id"
         ],
@@ -535,31 +535,10 @@
           "id": {
             "type": "string"
           },
-          "UID": {
-            "type": "uid"
-          },
-          "creatorID": {
+          "lessonName": {
             "type": "string"
           },
-          "URL": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "videoID": {
-            "type": "string"
-          },
-          "inGallery": {
-            "type": "string"
-          },
-          "inLesson": {
-            "type": "string"
-          },
-          "inWorkspace": {
-            "type": "string"
-          },
-          "teacherQuestion": {
+          "studentResponse": {
             "type": "string"
           },
           "published_at": {
@@ -568,33 +547,12 @@
           }
         }
       },
-      "NewUrl-storage": {
+      "NewLesson-question": {
         "properties": {
-          "UID": {
-            "type": "uid"
-          },
-          "creatorID": {
+          "lessonName": {
             "type": "string"
           },
-          "URL": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "videoID": {
-            "type": "string"
-          },
-          "inGallery": {
-            "type": "string"
-          },
-          "inLesson": {
-            "type": "string"
-          },
-          "inWorkspace": {
-            "type": "string"
-          },
-          "teacherQuestion": {
+          "studentResponse": {
             "type": "string"
           },
           "published_at": {

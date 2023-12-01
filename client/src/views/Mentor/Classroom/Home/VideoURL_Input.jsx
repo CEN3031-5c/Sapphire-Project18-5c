@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import { Form, Input } from 'antd'
 
-function VideoURL_Input ( { setEmbedLink, embedLink } ) {
+function VideoURL_Input ( { setEmbedLink, embedLink, setVideoQuestion, question } ) {
 
   const checkEmbedLink = embedLink => {
 
@@ -39,6 +38,16 @@ function VideoURL_Input ( { setEmbedLink, embedLink } ) {
           value={embedLink}
           className="input"
           placeholder="Enter video embed link"
+        ></Input.TextArea>
+      </Form.Item>
+      <Form.Item id="form-label" label="Video question:">
+        <Input.TextArea
+          onChange={e => {
+            setVideoQuestion(e.target.value);
+          }}
+          value={question}
+          className="input"
+          placeHolder="Enter question for end of video"
         ></Input.TextArea>
       </Form.Item>
     </div>

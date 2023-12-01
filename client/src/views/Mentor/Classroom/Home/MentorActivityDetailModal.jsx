@@ -43,8 +43,7 @@ const MentorActivityDetailModal = ({
   const navigate = useNavigate()
 
   const [embedLink, setEmbedLink] = useState("");
-
-  
+  const [question, setVideoQuestion] = useState("");
   
   useEffect(() => {
     const showActivityDetailsModal = async () => {
@@ -253,6 +252,8 @@ const MentorActivityDetailModal = ({
         <VideoURL_Input
           setEmbedLink={setEmbedLink}
           embedLink={embedLink}
+          setVideoQuestion={setVideoQuestion}
+          question={question}
         >
         </VideoURL_Input>
 

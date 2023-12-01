@@ -39,7 +39,7 @@ const MentorActivityDetailModal = ({
   const navigate = useNavigate()
 
   const [embedLink, setEmbedLink] = useState("");
-
+  const [question, setVideoQuestion] = useState("");
   
   
   useEffect(() => {
@@ -218,6 +218,8 @@ const MentorActivityDetailModal = ({
         <VideoURL_Input
           setEmbedLink={setEmbedLink}
           embedLink={embedLink}
+          setVideoQuestion={setVideoQuestion}
+          question={question}
         >
         </VideoURL_Input>
         {/* <Form.Item id="form-label" label="Student Template">

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import NavBar from '../../components/NavBar/NavBar';
-import './PlansPage.less';
 import VideoPlayer from './VideoPlayer.jsx';
 
 function PlansPage() {
@@ -23,7 +22,7 @@ function PlansPage() {
   return (
     <>
       <NavBar />
-      <div className='container nav-padding'>
+      <div >
         <h1>Lesson Plans</h1>
         {/* <div style={{ marginTop: '20px' }}>
           <input

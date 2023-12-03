@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import NavBar from '../../components/NavBar/NavBar';
-import './PlansPage.less';
 import VideoPlayer from './VideoPlayer.jsx';
 
 function PlansPage() {

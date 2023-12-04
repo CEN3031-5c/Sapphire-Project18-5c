@@ -35,7 +35,7 @@ function PlansPage() {
           <button onClick={handleSearch}>Add Video</button>
           <button onClick={() => setVideoId('')}>Remove Video</button>
         </div> */}
-        <VideoPlayer 
+        <VideoPlayer
         name = {"Fossil Fuels - Activity 3"}
         />
         {/* {videoId && (

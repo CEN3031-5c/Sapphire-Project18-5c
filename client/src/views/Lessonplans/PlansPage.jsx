@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 import VideoPlayer from './VideoPlayer.jsx';
+import './PlansPage.less';
 
 function PlansPage() {
-  // const [searchQuery, setSearchQuery] = useState('');
-  // const [videoId, setVideoId] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [videoId, setVideoId] = useState('');
 
- //const handleSearch = () => {
-    // Implement your search logic here
-    //console.log('Searching for:', searchQuery);
-    // Assuming the searchQuery is the video URL, extract the video ID
-    //const videoIdMatch = searchQuery.match(/(?:\?v=|&v=|youtu\.be\/|\/embed\/|\/v\/|\/e\/|\/u\/\w+\/|\/d\/|\/1\/|\/?vi?=|&vi?=|\/?\w+=)([\w-]{11})/);
+ const handleSearch = () => {
+    //Implement your search logic here
+    console.log('Searching for:', searchQuery);
+    //Assuming the searchQuery is the video URL, extract the video ID
+    const videoIdMatch = searchQuery.match(/(?:\?v=|&v=|youtu\.be\/|\/embed\/|\/v\/|\/e\/|\/u\/\w+\/|\/d\/|\/1\/|\/?vi?=|&vi?=|\/?\w+=)([\w-]{11})/);
     
-  //   if (videoIdMatch) {
-  //     setVideoId(videoIdMatch[1]);
-  //   } else {
-  //     console.error('Invalid YouTube URL');
-  //   }
-  // };
+    if (videoIdMatch) {
+      setVideoId(videoIdMatch[1]);
+    } else {
+      console.error('Invalid YouTube URL');
+    }
+  };
 
   return (
     <>
       <NavBar />
       <div className='container nav-padding'>
-        <h1>Lesson Plans</h1>
+        <div id = 'main-header' >Lesson Plans</div>
         {/* <div style={{ marginTop: '20px' }}>
           <input
             type="text"
@@ -35,7 +36,7 @@ function PlansPage() {
           <button onClick={() => setVideoId('')}>Remove Video</button>
         </div> */}
         <VideoPlayer 
-        name = {"Fossil Fuels - Activity 1"}
+        name = {"Fossil Fuels - Activity 3"}
         />
         {/* {videoId && (
           <div style={{ marginTop: '20px' }}>

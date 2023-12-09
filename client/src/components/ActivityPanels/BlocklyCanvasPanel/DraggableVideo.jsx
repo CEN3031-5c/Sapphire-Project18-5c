@@ -23,16 +23,11 @@ export default function DraggableVideo(props) {
         setPos3(e.clientX);
         setPos4(e.clientY);
         console.log("Mousedown pos 3: "+pos3);
-        // document.onmouseup = handleMouseUp;
-        // document.onmousemove = handleMouseMove(e);
       };
 
     const handleMouseMove = (e, elmnt) => {
-        //alert("Working");
-        //e = e;
         e.preventDefault();
         if(mouseDown){
-            //alert("Mousedown")
             // calculate the new cursor position:
             console.log("Moving pos 3: "+pos3);
 

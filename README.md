@@ -67,8 +67,21 @@ If videos do not appear, access Strapi and ensure the permissions for URLs Datab
 
 ### Editing Database
 
-To make any changes or adjustments to the databases of CASMM or URL Storage, refer to the docker `casmm-server-dev` console.
+To make any changes or adjustments to the databases of CASMM or URL Storage, refer to following directions:
+
+First, start Strapi Admin through CASMM and Docker. Once it has started, a notification should appear and allow the user to login to the admin account for admin permissions. Navigate to the link provided through the terminal and docker output lines. Next, login to the admin account using the login information provided above and then you will be sent to the Strapi admin dashboard. 
 
 ![Pasted image 20231213160254](https://github.com/CEN3031-5c/Sapphire-Project18-5c/assets/88823380/c0117205-469f-482a-be22-2d9b43c48613)
 
+1. For Collection Monitoring
+Navigate to the left side of the admin dashboard and scroll to the correct collection, in this case the URLStorages. After click, the contents within the collection will be shown as seen below:
+
+The user can navigate to the right of the Collection Table to add new entries through the blue button ‘Add New URLStorages’ on the top right of the dashboard and the window below will show:
+
+The entries themselves can also be edited through the options on the right of the chart for each entry. The options and editing window will open upon selection as shown below:
+
+2. For Collection Editing
+Navigate to the ‘Content-Types Builder’ on the left side of the dashboard.
+
+Once in this Content-Types Builder, the Collection Types area will be shown for the user to scroll to the wanted Collection Type or the option to create a new Collection Type. Once the Collection Type is selected, the user can add, edit, or remove collection type fields such as seen below with URLStorages. The user can also create a new Collection through the option shown in blue below. 
    

@@ -69,7 +69,7 @@ If videos do not appear, access Strapi and ensure the permissions for URLs Datab
 
 To make any changes or adjustments to the databases of CASMM or URL Storage, refer to following directions:
 
-First, start Strapi Admin through CASMM and Docker. Once it has started, a notification should appear and allow the user to login to the admin account for admin permissions. Navigate to the link provided through the terminal and docker output lines. Next, login to the admin account using the login information provided above and then you will be sent to the Strapi admin dashboard. 
+First, start Strapi Admin through CASMM and Docker. Once it has started, a notification should appear and allow the user to login to the admin account for admin permissions. Navigate to the link provided through the terminal and docker output lines. Next, login to the admin account using the login information provided from external sources and then you will be sent to the Strapi admin dashboard. 
 
 ![Pasted image 20231213160254](https://github.com/CEN3031-5c/Sapphire-Project18-5c/assets/88823380/c0117205-469f-482a-be22-2d9b43c48613)
 

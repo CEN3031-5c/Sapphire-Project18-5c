@@ -44,7 +44,8 @@ This is a fork of CASMM (or now Codesparks), any information on the application,
 ## `Video Storage`
 
 - Added a database to store the YouTube embed links via [Strapi](https://docs-v3.strapi.io/developer-docs/latest/getting-started/introduction.html).
-- Link insertion and deletion via the Activity Editor within Teacher View.
+- Link insertion and deletion via the Activity Editor within Classroom Manager View.
+- Videos can be uploaded to workspaces in the activity editor or in general via the Gallery tab in the Classroom Manager view.
 
 # Contributions and Development
 

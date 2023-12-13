@@ -14,6 +14,7 @@ This is a fork of CASMM (or now Codesparks), any information on the application,
 > (Example video from [Animal Crossing Gamecube - All Snow Music](https://www.youtube.com/watch?v=fRozdaGG01M))
 
 - A draggable miniplayer that allows students to watch video lessons while working on the lesson itself.
+- Can be found in activity workspaces through the top right menu. 
 
 <br/>
 
@@ -21,7 +22,8 @@ This is a fork of CASMM (or now Codesparks), any information on the application,
 > (Example video from [Calculus 1 Lecture 0.1: Lines, Angle of Inclination, and the Distance Formula](https://www.youtube.com/watch?v=fYyARMqiaag&ab_channel=ProfessorLeonard)
 
 - A video player within a possible "Lesson Plans" page where students actually sit and watch lectures.
-- An interactive question box that allows teacher to ask open-ended questions about the video for students to answer.
+- The front-end for an interactive question box that allows teacher to ask open-ended questions about the video for students to answer.
+- Can be accessed at this address: "http://localhost:3000/lessonplans" 
 
 <br/>
 
@@ -35,7 +37,7 @@ This is a fork of CASMM (or now Codesparks), any information on the application,
 
 ![image](https://github.com/CEN3031-5c/Sapphire-Project18-5c/assets/88823380/e0a9c1d5-1a71-469f-b174-1ffc206e57c0)
 
-- Once a certain amount of reports is reached, an email will be sent to an administrator for reviewing via [EmailJS](https://www.emailjs.com/).
+- With each report, an email is sent to an administrator for reviewing via [EmailJS](https://www.emailjs.com/).
 
 <br/>
 
@@ -97,4 +99,15 @@ Once in this Content-Types Builder, the Collection Types area will be shown for 
 
 ![image](https://github.com/CEN3031-5c/Sapphire-Project18-5c/assets/88823380/e353ad48-95da-4e0a-a3a3-af671c823637)
 
-   
+## 3. Strapi Dumping
+**If you want to save your database settings and entries across devices, update the dump file here!**
+
+Find your old dump file at scripts/development_db.dump and make a move it somewhere safe outside of the project.
+
+Cross-reference this [guide](https://github.com/DavidMagda/CaSMM_fork_2023/blob/develop/scripts/readme.md) to replace the database dump file with your own, keeping in mind that the command should actually be 'pg_dump -U postgres -d strapi -f development_db.dump'. Once the new dump has been made, it will actually be found just outside the **docker-entrypoint-initdb.d** folder. Move the new dump into the folder using the command line.
+
+After moving the new dump file, 'docker compose down' the project or delete it in the Docker app. Then run 'docker compose up' and the new dump file will be in effect. All systems that ran the previous dump file will need to compose down and up their projects to see the changes.
+
+# Outstanding Work
+We had one major goal that was left outstanding at the end of our sprint- the implementation of interactive video questions within Video Lessons. Although we completed one of our major goals of creating an integrated video system within the workspace as well as a lesson page for students to learn and answer questions, we were not able to fully create a feature for students to answer pop-up interactive questions at certain times. Even though this goal wasn’t fully completed, the development team was able to create the groundwork/foundation for this feature through backend collections, frontend components, etc. This will be seen as a stretch goal for future teams to implement and build upon what was done by our development team these two sprints.
+

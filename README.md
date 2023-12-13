@@ -112,3 +112,5 @@ After moving the new dump file, `docker compose down` the project or delete it i
 # Outstanding Work
 We had one major goal that was left outstanding at the end of our sprint- the implementation of interactive video questions within Video Lessons. Although we completed one of our major goals of creating an integrated video system within the workspace as well as a lesson page for students to learn and answer questions, we were not able to fully create a feature for students to answer pop-up interactive questions at certain times. Even though this goal wasn’t fully completed, the development team was able to create the groundwork/foundation for this feature through backend collections, frontend components, etc. This will be seen as a stretch goal for future teams to implement and build upon what was done by our development team these two sprints.
 
+# References
+Email JS was used for the flagging emails and can be found [here](https://www.emailjs.com/).
